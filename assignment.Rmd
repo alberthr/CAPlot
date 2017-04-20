@@ -22,6 +22,9 @@ Whis this app you can:
 You can find the App in the link below:
 <https://alberthr.shinyapps.io/CAPlot/>
 
+And the Source Code here:
+<https://github.com/alberthr/CAPlot>
+
 
 ## Base Code
 The base code that runs the app uses the CA function in the FactoMineR. The idea is start from the first basic plot and format it to make it suit to your documents.
