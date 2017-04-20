@@ -1,0 +1,52 @@
+---
+title: "Assignment - CA Plot"
+author: "Albert Hinojosa"
+date: "19 de abril de 2017"
+output: ioslides_presentation
+---
+
+
+## Introduction
+
+Make a CA plot is not always simple. Sometimes it's difficult to find the suitable software or the software is expensive. R is a free solution but using it is not simple for begginers. This App helps users to make CA Plots in a very simple and fast way. It just plots the 2 dimensions with more contribution of a CA analysis and allows the user to customize the plot to fit their needs or make it in a more fancy way.
+
+
+## What it is
+Whis this app you can:
+
+- Play with default loaded data.
+- Create new CA analysis with your infomation by uploading Excel files with your data.
+- Customize your plots (Sizes, Colors, Labels, Background colors...)
+- Create readable plots and avoid the overlaping of labels (GGRepel library)
+
+You can find the App in the link below:
+<https://alberthr.shinyapps.io/CAPlot/>
+
+
+## Base Code
+The base code that runs the app uses the CA function in the FactoMineR. The idea is start from the first basic plot and format it to make it suit to your documents.
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+library(factoextra)
+library(FactoMineR)
+
+data("housetasks")
+datos <- housetasks
+
+acor <- CA(datos)
+
+```
+
+## Base Plot
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(factoextra)
+library(FactoMineR)
+
+data("housetasks")
+datos <- housetasks
+
+acor <- CA(datos)
+
+```
+
