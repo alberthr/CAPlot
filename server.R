@@ -1,7 +1,7 @@
 library(shiny)
 library(shinydashboard)
 library(readxl)
-library(xlsx)
+library(openxlsx)
 library(FactoMineR)
 library(factoextra)
 library(ggplot2)
@@ -23,13 +23,13 @@ function(input, output) {
     if (!is.null(inFile1)) {
       if(tipo1 == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
         file.rename(inFile1$datapath, paste(inFile1$datapath, ".xlsx", sep=""))
-        datos <- as.data.frame(read_excel(paste(inFile1$datapath, ".xlsx", sep=""), 1))
+        datos <- as.data.frame(read.xlsx(paste(inFile1$datapath, ".xlsx", sep=""), 1))
         rownames(datos) <- datos[,1]
         datos <- datos[,-1]
       } 
       else {
         file.rename(inFile1$datapath, paste(inFile1$datapath, ".xls", sep=""))
-        datos <- as.data.frame(read_excel(paste(inFile1$datapath, ".xls", sep=""), 1))
+        datos <- as.data.frame(read.xlsx(paste(inFile1$datapath, ".xls", sep=""), 1))
         rownames(datos) <- datos[,1]
         datos <- datos[,-1]
       }
